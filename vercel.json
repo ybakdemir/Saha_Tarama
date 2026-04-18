@@ -1,0 +1,9 @@
+{
+  "name": "saha-tarama",
+  "version": "1.0.0",
+  "description": "OKM Conrad X3 Ultra Saha Analiz Uygulaması",
+  "private": true,
+  "engines": {
+    "node": "18.x"
+  }
+}
