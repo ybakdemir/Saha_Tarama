@@ -543,7 +543,7 @@ SADECE JSON:{"anomaliler":[{"tip":"Metal/Boşluk/Mineral/Kaya/Toprak","renk":"",
     });
     const data=await res.json();
     const txt=data.content?.find(b=>b.type==='text')?.text||'';
-    const parsed=JSON.parse(txt.replace(/```json|```/g,'').trim());
+    const jsonMatch = txt.match(/\{[\s\S]*\}/); if (!jsonMatch) throw new Error('JSON bulunamadı: ' + txt.substring(0, 200)); const parsed = JSON.parse(jsonMatch[0]);
     renderRes(parsed,en,boy,darbe,yuk);
     saveAnalysis(parsed,en,boy,darbe,yuk);
   }catch(e){
