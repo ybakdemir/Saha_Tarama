@@ -16,8 +16,6 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sans)}
-
-/* HEADER */
 .hdr{height:56px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;
   justify-content:space-between;padding:0 1.5rem;
   background:rgba(10,14,20,0.96);backdrop-filter:blur(10px);
@@ -34,20 +32,14 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
 .user-pill:hover{border-color:var(--bdr2)}
 .uavatar{width:22px;height:22px;border-radius:50%;background:rgba(0,212,170,.2);
   display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--acc);font-family:var(--mono)}
-
-/* LAYOUT */
 .layout{display:grid;grid-template-columns:310px 1fr;height:calc(100vh - 56px)}
 .sidebar{border-right:1px solid var(--bdr);overflow-y:auto;display:flex;flex-direction:column}
 .main{overflow-y:auto;display:flex;flex-direction:column}
-
-/* SIDEBAR SECTIONS */
 .sb-section{padding:1rem;border-bottom:1px solid var(--bdr)}
 .sb-section:last-child{border-bottom:none;flex:1}
 .slabel{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);
   text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
 .slabel-num{color:var(--hint)}
-
-/* APARAT */
 .aparat-row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .abtn{border:1px solid var(--bdr2);border-radius:6px;padding:10px 12px;cursor:pointer;
   background:var(--surf);text-align:left;transition:all .15s}
@@ -56,8 +48,6 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
 .abtn-title{font-family:var(--mono);font-size:12px;color:var(--txt);margin-bottom:3px}
 .abtn.active .abtn-title{color:var(--acc)}
 .abtn-sub{font-size:11px;color:var(--muted);line-height:1.4}
-
-/* SENSOR PANEL */
 .spanel{margin-top:8px;border:1px solid var(--bdr);border-radius:6px;overflow:hidden;display:none}
 .spanel.show{display:block}
 .spanel-hdr{padding:7px 11px;background:var(--surf2);font-family:var(--mono);font-size:10px;
@@ -68,8 +58,6 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
 .snum{font-family:var(--mono);font-size:11px;color:var(--txt);min-width:88px}
 .sdesc{color:var(--muted)}
 .snote{padding:7px 11px;background:rgba(0,144,255,.05);font-size:11px;color:#5b8fbf;line-height:1.5;border-top:1px solid var(--bdr)}
-
-/* INPUTS */
 .inp-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
 .igrp{display:flex;flex-direction:column;gap:4px}
 .igrp label{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:.04em}
@@ -81,16 +69,12 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
   border:1px solid rgba(0,212,170,.18);border-radius:5px;
   font-family:var(--mono);font-size:11px;color:var(--acc);line-height:1.8}
 .calc-box.show{display:block}
-
-/* RENK */
 .renk-list{display:flex;flex-direction:column;gap:5px}
 .ri{display:flex;align-items:center;gap:9px}
 .rdot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 .rname{font-family:var(--mono);font-size:11px;color:var(--txt);min-width:95px}
 .rarr{color:var(--hint);font-size:11px}
 .rdesc{font-size:11px;color:var(--muted)}
-
-/* UPLOAD */
 .upload-zone{border:1.5px dashed var(--bdr2);border-radius:8px;padding:1.75rem 1rem;
   text-align:center;cursor:pointer;position:relative;background:var(--surf);transition:all .2s}
 .upload-zone:hover{border-color:var(--acc);background:rgba(0,212,170,.03)}
@@ -98,20 +82,14 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
 .upload-ico{font-size:22px;color:var(--muted);margin-bottom:6px}
 .upload-txt{font-size:13px;color:var(--muted)}
 .upload-hint{font-size:11px;color:var(--hint);margin-top:3px;font-family:var(--mono)}
-
-/* ANALYZE BTN */
 .abtn-analyze{display:none;width:100%;padding:13px;font-family:var(--mono);font-size:13px;
   letter-spacing:.08em;background:var(--acc);color:#001a14;border:none;border-radius:6px;
   cursor:pointer;font-weight:700;text-transform:uppercase;transition:all .2s;margin-top:8px}
 .abtn-analyze:hover{background:#00f0c0;transform:translateY(-1px)}
 .abtn-analyze:disabled{opacity:.4;cursor:not-allowed;transform:none}
-
-/* ERROR */
 .err-msg{display:none;margin-top:8px;padding:10px 12px;background:rgba(255,69,69,.08);
   border:1px solid rgba(255,69,69,.25);border-radius:5px;font-size:12px;
   color:var(--danger);font-family:var(--mono);line-height:1.5}
-
-/* HISTORY */
 .hist-list{display:flex;flex-direction:column;gap:6px;max-height:200px;overflow-y:auto}
 .hist-item{display:flex;align-items:center;gap:8px;padding:8px 10px;
   background:var(--surf);border:1px solid var(--bdr);border-radius:5px;cursor:pointer;transition:all .15s}
@@ -121,45 +99,32 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
 .hist-title{font-size:12px;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hist-sub{font-size:10px;color:var(--muted);font-family:var(--mono);margin-top:1px}
 .hist-empty{font-size:12px;color:var(--hint);font-family:var(--mono);text-align:center;padding:1rem}
-
-/* MAIN AREA */
 .main-inner{padding:1.25rem;flex:1;display:flex;flex-direction:column;gap:1rem}
-
-/* PREVIEW */
 .prev-wrap{display:none;border:1px solid var(--bdr2);border-radius:8px;overflow:hidden;position:relative}
 .prev-wrap img{width:100%;max-height:360px;object-fit:contain;background:#000;display:block}
 .prev-overlay{position:absolute;top:8px;right:8px;display:flex;gap:6px}
 .prev-badge{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:3px;
   background:rgba(0,0,0,.75);color:var(--acc);border:1px solid rgba(0,212,170,.3);letter-spacing:.06em}
-
-/* LOADING */
 .loading-wrap{display:none;text-align:center;padding:3rem 1rem}
 .spin{width:40px;height:40px;border:2px solid var(--bdr2);border-top-color:var(--acc);
   border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 1rem}
 @keyframes spin{to{transform:rotate(360deg)}}
 .load-txt{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em}
 .load-sub{font-size:11px;color:var(--hint);margin-top:4px;font-family:var(--mono)}
-
-/* RESULTS */
 .result-wrap{display:none}
 .rmeta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
 .rpill{font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:3px;
   border:1px solid var(--bdr2);color:var(--muted);letter-spacing:.06em}
 .rpill.acc{border-color:rgba(0,212,170,.4);color:var(--acc)}
-
 .rcard{background:var(--surf);border:1px solid var(--bdr);border-radius:8px;
   padding:1rem;margin-bottom:.75rem}
 .rcard-label{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.1em;
   text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--bdr)}
-
-/* KALIBRASYON */
 .krow{display:flex;align-items:flex-start;gap:8px;padding:5px 0;
   border-bottom:1px solid var(--bdr);font-size:12px}
 .krow:last-child{border-bottom:none;padding-bottom:0}
 .kkey{color:var(--muted);font-family:var(--mono);font-size:11px;min-width:150px;flex-shrink:0}
 .kval{color:var(--acc);font-family:var(--mono);font-size:11px;line-height:1.5}
-
-/* ANOMALI */
 .aitem{display:flex;align-items:flex-start;gap:11px;padding:11px 0;
   border-bottom:1px solid var(--bdr)}
 .aitem:last-child{border-bottom:none;padding-bottom:0}
@@ -176,28 +141,18 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
 .b-k{background:rgba(255,69,69,.14);color:#ff6666;border:1px solid rgba(255,69,69,.28)}
 .b-y{background:rgba(255,170,0,.1);color:#ffaa00;border:1px solid rgba(255,170,0,.22)}
 .b-n{background:rgba(0,200,100,.08);color:#44cc80;border:1px solid rgba(0,200,100,.18)}
-
-/* RAPOR */
 .rapor{font-size:13px;color:#9ab0cc;line-height:1.8;white-space:pre-wrap}
-
-/* UYARI */
 .uyari{background:rgba(255,170,0,.06);border:1px solid rgba(255,170,0,.2);
   border-radius:6px;padding:11px 13px;margin-bottom:.75rem}
 .uyari p{font-size:12px;color:#cc8800;line-height:1.7;font-family:var(--mono)}
-
-/* EMPTY */
 .empty{display:flex;flex-direction:column;align-items:center;justify-content:center;
   flex:1;gap:10px;opacity:.25;padding:3rem}
 .empty-ico{font-size:40px}
 .empty-txt{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
-
-/* RESET */
 .reset-btn{width:100%;padding:9px;font-family:var(--mono);font-size:11px;
   letter-spacing:.07em;background:transparent;border:1px solid var(--bdr2);
   border-radius:5px;cursor:pointer;color:var(--muted);text-transform:uppercase;transition:all .2s}
 .reset-btn:hover{border-color:var(--danger);color:var(--danger)}
-
-/* AUTH OVERLAY */
 .auth-overlay{position:fixed;inset:0;background:var(--bg);z-index:500;
   display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem}
 .auth-card{background:var(--surf);border:1px solid var(--bdr2);border-radius:12px;
@@ -216,12 +171,9 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
 .auth-err{font-size:12px;color:var(--danger);font-family:var(--mono);margin-bottom:8px;display:none}
 .auth-switch{font-size:12px;color:var(--muted);cursor:pointer;margin-top:8px}
 .auth-switch span{color:var(--acc)}
-
-/* FOOTER */
 .footer{border-top:1px solid var(--bdr);padding:8px 1.5rem;display:flex;
   justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--hint);
   letter-spacing:.05em}
-
 @media(max-width:700px){
   .layout{grid-template-columns:1fr}
   .sidebar{border-right:none;border-bottom:1px solid var(--bdr)}
@@ -231,7 +183,6 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
 </head>
 <body>
 
-<!-- AUTH OVERLAY -->
 <div class="auth-overlay" id="authOverlay">
   <div class="auth-card">
     <div class="auth-logo">OKM SAHA ANALİZ</div>
@@ -246,7 +197,6 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
   </div>
 </div>
 
-<!-- HEADER -->
 <header class="hdr">
   <div class="logo">
     <div class="logo-dot"></div>
@@ -263,9 +213,7 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
 </header>
 
 <div class="layout">
-  <!-- SIDEBAR -->
   <aside class="sidebar">
-
     <div class="sb-section">
       <div class="slabel"><span class="slabel-num">01</span> Aparat Tipi</div>
       <div class="aparat-row">
@@ -280,7 +228,6 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
       </div>
       <div class="spanel" id="spanel"></div>
     </div>
-
     <div class="sb-section">
       <div class="slabel"><span class="slabel-num">02</span> Tarama Parametreleri</div>
       <div class="inp-grid" style="margin-bottom:7px">
@@ -291,7 +238,6 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
       </div>
       <div class="calc-box" id="calcBox"></div>
     </div>
-
     <div class="sb-section">
       <div class="slabel"><span class="slabel-num">03</span> Renk Referansı</div>
       <div class="renk-list">
@@ -303,35 +249,29 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
         <div class="ri"><div class="rdot" style="background:#666"></div><span class="rname">GİRİNTİLİ</span><span class="rarr">→</span><span class="rdesc">Doğal</span></div>
       </div>
     </div>
-
     <div class="sb-section">
       <div class="slabel"><span class="slabel-num">04</span> Görüntü Yükle</div>
       <div class="upload-zone">
-        <input type="file" id="fileInp" accept="image/jpeg,image/jpg,image/png"/>
+        <input type="file" id="fileInp" accept="image/*"/>
         <div class="upload-ico">↑</div>
         <div class="upload-txt">Visualizer 3D ekran görüntüsü</div>
         <div class="upload-hint">PNG · JPG · JPEG</div>
       </div>
     </div>
-
     <div class="sb-section">
       <div class="err-msg" id="errMsg"></div>
       <button class="abtn-analyze" id="analyzeBtn">▶ Analiz Et</button>
     </div>
-
     <div class="sb-section">
       <div class="slabel"><span class="slabel-num">05</span> Analiz Geçmişi</div>
       <div class="hist-list" id="histList">
         <div class="hist-empty">Henüz analiz yok</div>
       </div>
     </div>
-
   </aside>
 
-  <!-- MAIN -->
   <main class="main">
     <div class="main-inner">
-
       <div class="prev-wrap" id="prevWrap">
         <img id="prevImg" src="" alt="Görüntü"/>
         <div class="prev-overlay">
@@ -339,13 +279,11 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
           <div class="prev-badge" id="pb2">—</div>
         </div>
       </div>
-
       <div class="loading-wrap" id="loadWrap">
         <div class="spin"></div>
         <div class="load-txt">4× FLC100 VERİ DİZİSİ ANALİZ EDİLİYOR</div>
         <div class="load-sub">Conrad X3 Ultra · OKM · Visualizer 3D</div>
       </div>
-
       <div class="result-wrap" id="resWrap">
         <div class="rmeta" id="rmeta"></div>
         <div class="rcard"><div class="rcard-label">Kalibrasyon Durumu</div><div id="kalibDiv"></div></div>
@@ -354,12 +292,10 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
         <div id="uyariDiv"></div>
         <button class="reset-btn" id="resetBtn">✕ Yeni Analiz</button>
       </div>
-
       <div class="empty" id="emptyState">
         <div class="empty-ico">⬡</div>
         <div class="empty-txt">GÖRÜNTÜ BEKLENİYOR</div>
       </div>
-
     </div>
   </main>
 </div>
@@ -369,7 +305,6 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--sa
   <span>PCB ~75cm · Sensör Aralığı ~20cm · Max 4.80m</span>
 </div>
 
-<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut }
@@ -460,10 +395,7 @@ function calcP(){
   const el=document.getElementById('calcBox');
   if(!en||!boy){el.classList.remove('show');return;}
   let lines=[`ALAN: ${en} × ${boy} m = ${(en*boy).toFixed(1)} m²`];
-  if(darbe){
-    const adim=((en*boy)/darbe).toFixed(2);
-    lines.push(`DARBE BAŞINA: ~${adim} m²`);
-  }
+  if(darbe) lines.push(`DARBE BAŞINA: ~${((en*boy)/darbe).toFixed(2)} m²`);
   if(yuk) lines.push(`SENSÖR YÜKSEKLİĞİ: ${yuk} cm ${yuk<=15?'✓ OPTİMAL':'⚠ YÜKSEK'}`);
   el.textContent=lines.join('\n');
   el.classList.add('show');
@@ -543,7 +475,9 @@ SADECE JSON:{"anomaliler":[{"tip":"Metal/Boşluk/Mineral/Kaya/Toprak","renk":"",
     });
     const data=await res.json();
     const txt=data.content?.find(b=>b.type==='text')?.text||'';
-    const jsonMatch = txt.match(/\{[\s\S]*\}/); if (!jsonMatch) throw new Error('JSON bulunamadı: ' + txt.substring(0, 200)); const parsed = JSON.parse(jsonMatch[0]);
+    const jsonMatch=txt.match(/\{[\s\S]*\}/);
+    if(!jsonMatch) throw new Error('JSON bulunamadı: '+txt.substring(0,200));
+    const parsed=JSON.parse(jsonMatch[0]);
     renderRes(parsed,en,boy,darbe,yuk);
     saveAnalysis(parsed,en,boy,darbe,yuk);
   }catch(e){
@@ -670,34 +604,23 @@ document.getElementById('resetBtn').addEventListener('click',()=>{
   document.getElementById('pb2').textContent='—';
 });
 
-/* AUTH */
 async function doLogin(){
   const e=document.getElementById('authEmail').value;
   const p=document.getElementById('authPass').value;
   const errEl=document.getElementById('authErr');
-  try{
-    await window._signIn(window._auth,e,p);
-  }catch(err){
-    errEl.textContent='Giriş hatası: '+err.message;
-    errEl.style.display='block';
-  }
+  try{ await window._signIn(window._auth,e,p); }
+  catch(err){ errEl.textContent='Giriş hatası: '+err.message; errEl.style.display='block'; }
 }
 
 async function doRegister(){
   const e=document.getElementById('authEmail').value;
   const p=document.getElementById('authPass').value;
   const errEl=document.getElementById('authErr');
-  try{
-    await window._signUp(window._auth,e,p);
-  }catch(err){
-    errEl.textContent='Kayıt hatası: '+err.message;
-    errEl.style.display='block';
-  }
+  try{ await window._signUp(window._auth,e,p); }
+  catch(err){ errEl.textContent='Kayıt hatası: '+err.message; errEl.style.display='block'; }
 }
 
-function skipAuth(){
-  document.getElementById('authOverlay').style.display='none';
-}
+function skipAuth(){ document.getElementById('authOverlay').style.display='none'; }
 
 function handleUserClick(){
   if(window._currentUser && window._auth){
