@@ -11,18 +11,22 @@ export default async function handler(req, res) {
     const imageBlock = userMsg.find(b => b.type === 'image');
     const textBlock = userMsg.find(b => b.type === 'text');
 
-    const parts = [];
-    if (textBlock) {
-      parts.push({ text: system + '\n\n' + textBlock.text });
-    }
-    if (imageBlock) {
-      parts.push({
+    const prompt = `Sen bir yeraltı tarama uzmanısın. Aşağıdaki OKM Visualizer 3D ekran görüntüsünü analiz et.
+
+${system}
+
+SADECE şu JSON formatında yanıt ver, başka hiçbir şey yazma:
+{"anomaliler":[{"tip":"Metal/Boşluk/Mineral/Kaya/Toprak","renk":"","konum":"","derinlikVeyaYayilim":"","guven":"Yüksek/Orta/Düşük","oncelik":"Kritik/Yüksek/Normal","aciklama":"","sensorNotu":""}],"kalibrasyon":{"derinlikGuvenirligi":"Yüksek/Orta/Düşük","nedenAciklama":"","sensorYuksekligi":"","cozunurlukNotu":""},"sahaRaporu":"","uyarilar":[],"onerilenenAksiyon":""}`;
+
+    const parts = [
+      {
         inline_data: {
           mime_type: imageBlock.source.media_type || 'image/jpeg',
           data: imageBlock.source.data
         }
-      });
-    }
+      },
+      { text: prompt }
+    ];
 
     const geminiRes = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
@@ -44,7 +48,7 @@ export default async function handler(req, res) {
     if (!geminiRes.ok) {
       console.error('Gemini error:', JSON.stringify(geminiData));
       return res.status(200).json({
-        content: [{ type: 'text', text: JSON.stringify({ error: geminiData }) }]
+        content: [{ type: 'text', text: '' }]
       });
     }
 
@@ -54,7 +58,6 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('Handler error:', error.message);
     return res.status(500).json({ error: error.message });
   }
 }
